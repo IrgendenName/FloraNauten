@@ -1,4 +1,5 @@
-package com.floranauten.floranauten.entitis;
+package com.entities;
+
 
 import java.util.List;
 
@@ -10,21 +11,25 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
-import lombok.NonNull;
-import lombok.Getter;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
 @Entity
-public class flaeche {
+public class massnahme {
     @Id
     private String name;
-    private String eigenschaft;
-    private String kategorie;
+    private String beschreibung;
+    private String spezifizierung;
+    private int kosten;
 
     @OneToMany
     @JoinColumn(name = "name", nullable = false)
-    private List<String> massnahmen;
+    private List<String> pflanzen;
 
+    @OneToOne
+    @JoinColumn(name = "name", nullable = false)
+    private String pflege;
 }

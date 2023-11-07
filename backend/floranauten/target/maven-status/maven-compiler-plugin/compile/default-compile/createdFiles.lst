@@ -1,0 +1,8 @@
+com/entities/pflege.class
+com/repositories/flaecheRepository.class
+com/entities/pflanze.class
+com/entities/flaeche.class
+com/controller/WelcomeController.class
+com/controller/Abfrage.class
+com/FloranautenApplication.class
+com/entities/massnahme.class

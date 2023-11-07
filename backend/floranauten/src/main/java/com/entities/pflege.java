@@ -1,4 +1,5 @@
-package com.floranauten.floranauten.entitis;
+package com.entities;
+
 
 import java.util.List;
 
@@ -17,10 +18,9 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 @Entity
-public class pflanze {
+public class pflege {
     @Id
     private String name;
-    private String bioName;
-    private String zusatz;
-    private String katArt;
+    private String intervall;
+    private String rhytmus;
 }

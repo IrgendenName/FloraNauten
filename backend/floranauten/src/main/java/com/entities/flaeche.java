@@ -1,5 +1,4 @@
-package com.floranauten.floranauten.entitis;
-
+package com.entities;
 
 import java.util.List;
 
@@ -11,16 +10,21 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
-import lombok.AllArgsConstructor;
+import lombok.NonNull;
 import lombok.Getter;
+import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 @Getter
 @Entity
-public class pflege {
+public class flaeche {
     @Id
     private String name;
-    private String intervall;
-    private String rhytmus;
+    private String eigenschaft;
+    private String kategorie;
+
+    @OneToMany
+    @JoinColumn(name = "name", nullable = false)
+    private List<String> massnahmen;
+
 }

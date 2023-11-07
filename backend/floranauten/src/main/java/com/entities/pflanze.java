@@ -1,5 +1,4 @@
-package com.floranauten.floranauten.entitis;
-
+package com.entities;
 
 import java.util.List;
 
@@ -18,18 +17,10 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 @Entity
-public class massnahme {
+public class pflanze {
     @Id
     private String name;
-    private String beschreibung;
-    private String spezifizierung;
-    private int kosten;
-
-    @OneToMany
-    @JoinColumn(name = "name", nullable = false)
-    private List<String> pflanzen;
-
-    @OneToOne
-    @JoinColumn(name = "name", nullable = false)
-    private String pflege;
+    private String bioName;
+    private String zusatz;
+    private String katArt;
 }
