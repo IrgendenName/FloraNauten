@@ -2,8 +2,7 @@
     import { onMount } from "svelte";
     import axios from "axios";
 
-    //let base_url = "http://127.0.0.1:5000";
-    let base_url = "https://wanlau01.pythonanywhere.com";
+    let base_url = "http://127.0.0.1:5000";
     let canvas;
     let context;
 

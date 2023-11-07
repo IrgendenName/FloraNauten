@@ -2,7 +2,6 @@
  	import axios from "axios";
 
 	let base_url = 'http://127.0.0.1:5000'
-	//let base_url = "https://wanlau01.pythonanywhere.com";
 	let bfs_number_names = [
 		{id: 261, name: `Zürich` },
 		{id: 62, name: `Kloten` },

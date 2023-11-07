@@ -59,9 +59,7 @@ def predict():
 
 @app.route("/")
 def hello_world():
-
-    print(request.args)
-    return "<p>Current model!</p>" + str(model)
+    return "<p>Hello World</p>" + str(model)
     
 # if this is the main thread of execution first load the model and
 # then start the server
