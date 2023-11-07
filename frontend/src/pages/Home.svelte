@@ -44,7 +44,10 @@
   h1 {
     font-size: 3rem;
     margin-bottom: 2rem;
+    font-family: 'Julius Sans One';
   }
+
+ 
 
   /* Stil für den Absatz */
   p {
