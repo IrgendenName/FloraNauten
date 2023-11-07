@@ -26,9 +26,24 @@
 
 
 <div class="container mt-3">
-	<!-- Here we load the page depending on the current URL -->
+	<img class="img-fluid logo" alt="Logo" src="Logo.png"/>
+
+
+	<!-- Here we load the page depending on the current 	URL -->
 	<Router {routes} />
 </div>
+
+<style>
+	.logo {
+		width: 5%;
+		height: auto;
+		margin-bottom: 80px;
+		float: right;	
+	}
+	.navigation {
+		margin-bottom: 20px;
+	}
+</style>
 
 
 
