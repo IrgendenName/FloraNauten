@@ -14,10 +14,7 @@
 						<a class="nav-link" href="#/">Home</a>
 					</li>				
 					<li class="nav-item">
-						<a class="nav-link" href="#/appartment">Appartment Regression</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#/draw">Draw Classification</a>
+						<a class="nav-link" href="#/rechner">Rechner</a>
 					</li>
 												
 				</ul>
@@ -27,7 +24,13 @@
 
 </div>
 
+
 <div class="container mt-3">
 	<!-- Here we load the page depending on the current URL -->
 	<Router {routes} />
 </div>
+
+
+
+
+
