@@ -63,12 +63,15 @@
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 4px;
-    background-color: #0000FF;
-    color: white;
+    background-color: white;
+    color: #010101;
     cursor: pointer;
+    border: 1px solid lightgreen;
   }
 
   button:hover {
-    background-color: #0000CC;
+    background-color: lightgrey;
   }
+
+
 </style>
