@@ -1,57 +1,74 @@
 <script>
-   import { onMount } from "svelte";
-    import axios from "axios";
+  // Hier könnten Sie Ihre JavaScript-Logik einfügen, zum Beispiel für das Handhaben von Formulardaten
+  let strasse = '';
+  let hausnummer = '';
+  let plz = '';
+  let ort = '';
+
+  const handleSubmit = () => {
+    // Logik, um das Formular zu verarbeiten
+    console.log({ strasse, hausnummer, plz, ort });
+  };
 </script>
 
-<main>
-  <img
-    src="https://www.zg.ch/behoerden/gemeinden/risch-rotkreuz/verwaltung/tiefbau-umwelt-sicherheit-1/copy_of_laerm/umwelt/biodiversitaet/ftw-simplelayout-textblock/@@images/fb1f43c6-f23e-4b67-a4ec-c5e0823d2677.jpeg"
-    alt="Biodiversität"
-  />
 
-  <h1>Rechner</h1>
+
+<form on:submit|preventDefault={handleSubmit}>
+  <div class="form-group">
+    <label for="strasse">Strasse</label>
+    <input id="strasse" type="text" bind:value={strasse} placeholder="Bitte auswählen" />
+  </div>
   
-</main>
+  <div class="form-group">
+    <label for="hausnummer">Hausnummer</label>
+    <input id="hausnummer" type="number" bind:value={hausnummer} placeholder="Hausnummer" />
+
+  </div>
+  
+  <div class="form-group">
+    <label for="plz">PLZ</label>
+    <input id="plz" type="number" bind:value={plz} placeholder="Postleitzahl" />
+
+  </div>
+  
+  <div class="form-group">
+    <label for="ort">Ort</label>
+    <input id="ort" type="text" bind:value={ort} placeholder="Ort" />
+
+  </div>
+  
+  <button type="submit">WEITER</button>
+</form>
+
 
 <style>
-  /* Hintergrundbild und Stil für die Seite */
-  main {
-    /* background-image: url("your-image-path.jpeg"); */
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    color: black;
+  .form-group {
+    margin-bottom: 1rem;
   }
 
-  /* Stil für die Überschrift */
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 2rem;
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
   }
 
-  /* Stil für den Absatz */
-  p {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
+  input, select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
   }
 
-  /* Stil für den Call-to-Action Button */
-  .cta-button {
-    padding: 1rem 2rem;
-    background: green;
-    color: white;
+  button {
+    padding: 0.5rem 1rem;
     border: none;
-    border-radius: 5px;
-    font-size: 1rem;
+    border-radius: 4px;
+    background-color: #0000FF;
+    color: white;
     cursor: pointer;
-    transition: background-color 0.3s ease;
   }
 
-  .cta-button:hover {
-    background: darkgreen;
+  button:hover {
+    background-color: #0000CC;
   }
 </style>

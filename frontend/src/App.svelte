@@ -37,8 +37,11 @@
 	.logo {
 		width: 5%;
 		height: auto;
-		margin-bottom: 80px;
+		margin-bottom: 100px;
 		float: right;	
+		position: absolute;
+		top: 10px;
+		right: 10px;	
 	}
 	.navigation {
 		margin-bottom: 20px;
