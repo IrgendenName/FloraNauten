@@ -41,7 +41,7 @@
   }
 
   /* Stil für die Überschrift */
-  h1 {
+  h1, h2, h3, h4, h5, h6 {
     font-size: 3rem;
     margin-bottom: 2rem;
     font-family: 'Julius Sans One';
