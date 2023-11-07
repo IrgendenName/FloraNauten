@@ -1,45 +1,36 @@
 <script>
-  // Hier könnten Sie Ihre JavaScript-Logik einfügen, zum Beispiel für das Handhaben von Formulardaten
-  let strasse = '';
-  let hausnummer = '';
-  let plz = '';
-  let ort = '';
+  let grundstueck = {
+    gebaeude: 0,
+    gruenflaeche: 0,
+    fassade: 0,
+    balkon: 0,
+  };
 
-  const handleSubmit = () => {
-    // Logik, um das Formular zu verarbeiten
-    console.log({ strasse, hausnummer, plz, ort });
+  const handleImageClick = (property) => {
+    // Ändert den Wert der übergebenen Eigenschaft (z.B., 'gebaeude') von 1 auf 0 oder umgekehrt
+    grundstueck[property] = grundstueck[property] === 1 ? 0 : 1;
   };
 </script>
 
+<img
+  src="gebaeude.jpg"
+  alt="Gebäude"
+  on:click={() => handleImageClick("gebaeude")}
+/>
+<img
+  src="gruenflaeche.jpg"
+  alt="Grünfläche"
+  on:click={() => handleImageClick("gruenflaeche")}
+/>
 
-
-<form on:submit|preventDefault={handleSubmit}>
-  <div class="form-group">
-    <label for="strasse">Strasse</label>
-    <input id="strasse" type="text" bind:value={strasse} placeholder="Bitte auswählen" />
-  </div>
-  
-  <div class="form-group">
-    <label for="hausnummer">Hausnummer</label>
-    <input id="hausnummer" type="number" bind:value={hausnummer} placeholder="Hausnummer" />
-
-  </div>
-  
-  <div class="form-group">
-    <label for="plz">PLZ</label>
-    <input id="plz" type="number" bind:value={plz} placeholder="Postleitzahl" />
-
-  </div>
-  
-  <div class="form-group">
-    <label for="ort">Ort</label>
-    <input id="ort" type="text" bind:value={ort} placeholder="Ort" />
-
-  </div>
-  
-  <button type="submit">WEITER</button>
-</form>
-
+<br>
+{#if grundstueck.gebaeude === 1}
+  <img src="fassade.jpg" alt="Fassade" />
+  <img src="balkon.jpg" alt="Balkon" />
+{/if}
+{#if grundstueck.gruenflaeche === 1}
+  <img src="gruenflaeche.jpg" alt="Grünfläche" />
+{/if}
 
 <style>
   .form-group {
@@ -51,7 +42,8 @@
     margin-bottom: 0.5rem;
   }
 
-  input, select {
+  input,
+  select {
     width: 100%;
     padding: 0.5rem;
     margin-bottom: 0.5rem;
@@ -73,5 +65,9 @@
     background-color: lightgrey;
   }
 
-
+  img {
+    width: 10%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
 </style>
