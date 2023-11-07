@@ -168,7 +168,7 @@
   }
 
   .text-center img:hover {
-    border-color: gray; 
+    border-color: gray;
   }
 
   figure {
