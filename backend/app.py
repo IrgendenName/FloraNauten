@@ -53,37 +53,6 @@ def predict():
     prediction = randomforest_model.predict([[rooms, area, df['pop'].iloc[0], df['pop_dens'].iloc[0], df['frg_pct'].iloc[0], df['emp'].iloc[0], df['tax_income'].iloc[0], area/rooms]])
     return str(round(prediction[0],2))
 
-
-@app.route('/hook', methods=['POST'])
-def save_canvas():
-    try:
-        image_data = re.sub('^data:image/.+;base64,', '', request.get_json()['image'])
-        from PIL import Image
-        im = Image.open(BytesIO(base64.b64decode(image_data)))
-        # im.save('canvas.png')
-        im28x28 = im.resize((28, 28)).convert('L') #resize the image to 28x28 and converts it to gray scale
-
-        # image to numpy
-        np_image = np.asarray(im28x28)
-        # assert(np_image.shape == (28, 28))
-        print(np.abs(np_image.reshape(28*28)-[255]))
-
-        # np.abs(np_image.reshape(28*28)-[255]) 
-        # reshapes the image to 28x28 pixes, substracts 255 from every value and applys abs to the matrix.
-        # this has to be done, becuase the mnist values are "Pixel values are 0 to 255. 0 means background (white), 255 means foreground (black). " (s. http://yann.lecun.com/exdb/mnist/)
-        # Grayscale uses 0 for black and 255 for white.
-        predicted_number = model.predict([np.abs(np_image.reshape(28*28)-[255])])
-        print(predicted_number)
-
-        buffered = BytesIO()
-        im28x28.save(buffered, format="PNG")
-        # im28x28.save('canvas2.png')
-        img_str = base64.b64encode(buffered.getvalue())
-        img_base64 = bytes("data:image/png;base64,", encoding='utf-8') + img_str
-        return json.dumps({'image': str(img_base64.decode('utf-8')), 'prediction': predicted_number[0]}), 200, {'ContentType': 'application/json'}
-    except Exception as err:
-        return json.dumps({'error': str(err)})
-
 @app.route("/")
 def hello_world():
 
