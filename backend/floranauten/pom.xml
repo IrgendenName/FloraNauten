@@ -14,7 +14,7 @@
 	<name>floranauten</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>19</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		
@@ -30,7 +30,7 @@
 			<artifactId>lombok</artifactId>
 			<version>1.0.0</version>
 		</dependency>
-
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -59,6 +59,22 @@
 			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+
+		<!-- Hibernate -->
+		
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.5.6.Final</version> <!-- Use the latest version available -->
+		</dependency>
+		
+		<!-- Hibernate Entity Manager -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>5.5.6.Final</version> <!-- Use the same version as hibernate-core -->
+		</dependency>
+		
 	</dependencies>
 	
 	<build>
@@ -67,7 +83,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-
+			
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>

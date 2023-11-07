@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-FloranautenApplication<floranauten>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.FloranautenApplication",
+            "projectName": "floranauten",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
