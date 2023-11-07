@@ -13,5 +13,12 @@ import lombok.NoArgsConstructor;
 @Getter
 @Document("flaeche")
 public class Flaeche {
+    @Id
+    private String name;
+    private String eigenschaft; //Grünfläche oder Verkehrsfläche
+    private String kategorie;
+    
+    @NonNull
+    private List<String> massnahmen; //Liste der passenden Massnahmen
     
 }
