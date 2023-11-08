@@ -1,8 +1,10 @@
-plz;ort;strasse;hausnummer;flaeche;typ
-8707;Uetikon am See;Tramstrasse;8;210;Trittrasen und Ruderalfluren
-8707;Uetikon am See;Tramstrasse;6;145;Trittrasen und Ruderalfluren
-8707;Uetikon am See;Tramstrasse;22;55;Gebüsche
-8707;Uetikon am See;Haslenbachstrasse;11;240;Grünland (Naturrasen, Wiesen und Weiden)
-8707;Uetikon am See;Haslenbachstrasse;11;200;Grünland (Naturrasen, Wiesen und Weiden)
-8707;Uetikon am See;Grütstrasse;17;170;Grünland (Naturrasen, Wiesen und Weiden)
-8704;Herrliberg;Arbachstrasse;2;120;Kunstrasen
+plz;ort;strasse;hausnummer;flaeche;flaechentyp;eigentuemer
+8707;Uetikon am See;Tramstrasse;8;210;Trittrasen und Ruderalfluren;Privatperson
+8707;Uetikon am See;Tramstrasse;6;145;Trittrasen und Ruderalfluren;Privatperson
+8707;Uetikon am See;Tramstrasse;22;55;Gebüsche;Privatperson
+8707;Uetikon am See;Haslenbachstrasse;11;240;Grünland (Naturrasen, Wiesen und Weiden);Privatperson
+8707;Uetikon am See;Haslenbachstrasse;11;200;Grünland (Naturrasen, Wiesen und Weiden);Privatperson
+8707;Uetikon am See;Grütstrasse;17;170;Grünland (Naturrasen, Wiesen und Weiden);Privatperson
+8704;Herrliberg;Arbachstrasse;2;120;Kunstrasen;Privatperson
+8610;Uster;Rebenweg;27;170;Grünland (Naturrasen, Wiesen und Weiden);Privatperson
+8706;Meilen;Dollikerstrasse;;3000;Grünland (Naturrasen, Wiesen und Weiden);Bauträger
