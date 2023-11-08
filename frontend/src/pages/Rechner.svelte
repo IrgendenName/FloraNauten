@@ -1,57 +1,220 @@
 <script>
-   import { onMount } from "svelte";
-    import axios from "axios";
+  let grundstueck = {
+    gebaeude: 0,
+    flaeche: 0,
+    fassade: 0,
+    balkon: 0,
+    gruenflaeche: 0,
+    verkehrsflaeche: 0,
+    versiegelt: 0,
+    unversiegelt: 0,
+  };
+
+  const handleImageClick = (property) => {
+    grundstueck[property] = grundstueck[property] += 1;
+  };
+
+  let massnahme = {
+    name: "",
+    beschreibung: "",
+    spezifizierung: "",
+    kosten: 0,
+  }
+
+  // function sendGrundstueckToServer() {
+  //   axios.post("http://localhost:3001/api/massnahme/", grundstueck).then((response) => {
+  //     massnahme = response.data;
+  //   });
+  // }
+
+
+  function sendGrundstueckToServer() {
+    axios.post("http://localhost:3001/api/massnahme/", grundstueck).then(() => {
+      // Navigate to Massnahmen.svelte and pass grundstueck data as a parameter
+      goto("/Massnahmen", { grundstueck });
+    });
+  }
+
+  
 </script>
 
 <main>
-  <img
-    src="https://www.zg.ch/behoerden/gemeinden/risch-rotkreuz/verwaltung/tiefbau-umwelt-sicherheit-1/copy_of_laerm/umwelt/biodiversitaet/ftw-simplelayout-textblock/@@images/fb1f43c6-f23e-4b67-a4ec-c5e0823d2677.jpeg"
-    alt="Biodiversität"
-  />
+  <h2>Um was für eine Fläche handelt es sich?</h2>
 
-  <h1>Rechner</h1>
-  
+  <div class="text-center">
+    <figure>
+      <img
+        src="gebaeude.png"
+        alt="Gebäude"
+        on:click={() => handleImageClick("gebaeude")}
+      />
+      <figcaption>Gebäude</figcaption>
+    </figure>
+    <figure>
+      <img
+        src="flaeche.png"
+        alt="Fläche"
+        on:click={() => handleImageClick("flaeche")}
+      />
+      <figcaption>Fläche</figcaption>
+    </figure>
+  </div>
+
+  <br />
+
+  {#if grundstueck.gebaeude === 1}
+    <div class="text-center">
+      <figure>
+        <img
+          src="fassade.jpg"
+          alt="Fassade"
+          on:click={() => handleImageClick("fassade")}
+        />
+        <figcaption>Fassade</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="balkon.png"
+          alt="Balkon"
+          on:click={() => handleImageClick("balkon")}
+        />
+        <figcaption>Balkon</figcaption>
+      </figure>
+    </div>
+  {/if}
+
+  {#if grundstueck.flaeche === 1}
+    <div class="text-center">
+      <figure>
+        <img
+          src="gruenflaeche.png"
+          alt="Grünfläche"
+          on:click={() => handleImageClick("gruenflaeche")}
+        />
+        <figcaption>Grünfläche</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="verkehrsflaeche.jpg"
+          alt="Verkehrsfläche"
+          on:click={() => handleImageClick("verkehrsflaeche")}
+        />
+        <figcaption>Verkehrsfläche</figcaption>
+      </figure>
+    </div>
+    <br /><br />
+    {#if grundstueck.verkehrsflaeche === 1}
+      <div class="text-center">
+        <figure>
+          <img
+            src="versiegelt.jpg"
+            alt="Versiegelt"
+            on:click={() => handleImageClick("versiegelt")}
+          />
+          <figcaption>Versiegelt</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="unversiegelt.jpg"
+            alt="Unversiegelt"
+            on:click={() => handleImageClick("unversiegelt")}
+          />
+          <figcaption>Unversiegelt</figcaption>
+        </figure>
+      </div>
+    {/if}
+  {/if}
+
+
+
+  <a href="#/massnahmen">  <button onclick="sendGrundstueckToServer()">Massnahmen anzeigen</button></a>
+
+
+
+
+<!-- <p>{massnahme.name}</p>
+<p>{massnahme.beschreibung}</p>
+<p>{massnahme.spezifizierung}</p>
+<p>{massnahme.kosten}</p> -->
+
+
+
 </main>
 
 <style>
-  /* Hintergrundbild und Stil für die Seite */
   main {
-    /* background-image: url("your-image-path.jpeg"); */
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    color: black;
+    align-items: center;
+    height: 100vh;
   }
 
-  /* Stil für die Überschrift */
-  h1 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-size: 3rem;
     margin-bottom: 2rem;
+    font-family: "Julius Sans One";
   }
 
-  /* Stil für den Absatz */
-  p {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
+  .form-group {
+    margin-bottom: 1rem;
   }
 
-  /* Stil für den Call-to-Action Button */
-  .cta-button {
-    padding: 1rem 2rem;
-    background: green;
-    color: white;
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
     border: none;
-    border-radius: 5px;
-    font-size: 1rem;
+    border-radius: 4px;
+    background-color: white;
+    color: #010101;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    border: 1px solid lightgreen;
   }
 
-  .cta-button:hover {
-    background: darkgreen;
+  button:hover {
+    background-color: lightgrey;
+  }
+
+  .text-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text-center img {
+    width: 5cm;
+    height: 5cm;
+    margin: 0.5cm;
+    border: 2px solid transparent;
+  }
+
+  .text-center img:hover {
+    border-color: gray;
+  }
+
+  figure {
+    text-align: center;
+  }
+
+  figcaption {
+    margin-top: 0.2rem;
+    font-family: "Julius Sans One";
   }
 </style>

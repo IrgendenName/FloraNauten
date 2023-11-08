@@ -5,11 +5,11 @@
 
 <!-- This part is always displayed -->
 <div class="container mt-3">
-	<img class="img-fluid logo" alt="Logo" src="Logo.png" />
+  <img class="img-fluid logo" alt="Logo" src="Logo.png" />
 
 
-	<!-- Here we load the page depending on the current 	URL -->
-	<Router {routes} />
+  <!-- Here we load the page depending on the current 	URL -->
+  <Router {routes} />
 </div>
 
 <style>
