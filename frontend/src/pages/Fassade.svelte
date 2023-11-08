@@ -43,8 +43,8 @@
 
 <main>
     <div class="massnahme">
-      <img src="fassademassnahme.jpg" alt="Fassade" class="image"/>
       <h1>Empfohlene Massnahmen</h1>
+      <img src="fassademassnahme.jpg" alt="Fassade" class="image" style="padding-bottom: 50px; padding-top: 10px"/>
       <br/>
       
       <h3><b>{fassade.name}</b></h3>
@@ -75,8 +75,7 @@
       <h3>Pflege</h3>
       <Calendar/>
 
-      <button class="cta-button" style="margin-top: 50px;">Download PDF</button>
-      <button class="sharingbutton" on:click={shareRecipe}>Share</button>
+      <button class="cta-button" style="margin-top: 50px;" on:click={shareRecipe}>Download PDF</button>
 
     </div>  
 
@@ -117,8 +116,10 @@
   }
 
   .massnahme {
-    max-width: 600px;
+    max-width: 800px;
     margin: 10px;
+    padding-top: 350px;
+    padding-bottom: 100px;
   }
 
   h2 {
@@ -130,7 +131,8 @@
   }
 
   .beschreibung {
-    margin-bottom: 10px;
+    padding-top: 10px;
+    margin: 10px;
   }
 
   table {
@@ -152,15 +154,15 @@
   /* Stil für den Call-to-Action Button */
   .cta-button {
     padding: 1rem 2rem;
-    color: rgb(0, 0, 0);
+    color: black;
     background: transparent;
-    border: 3px solid rgb(0, 0, 0);
+    border: 3px solid black;
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
 
   .cta-button:hover {
-    background: rgba(255,255,255, 0.3);
+    background: rgba(0, 0, 0, 0.1);
   }
 </style>

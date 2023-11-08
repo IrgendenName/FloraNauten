@@ -145,7 +145,7 @@ let path = "";
   {/if}
 
   <a href={"#/" + path}>
-    <button>Massnahmen anzeigen</button>
+    <button class="cta-button">Massnahmen anzeigen</button>
   </a>
 
   <!-- <p>{massnahme.name}</p>
@@ -194,18 +194,18 @@ let path = "";
     border-radius: 4px;
   }
 
-  button {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    background-color: white;
-    color: #010101;
+  .cta-button {
+    padding: 1rem 2rem;
+    color: black;
+    background: transparent;
+    border: 3px solid black;
+    font-size: 1rem;
     cursor: pointer;
-    border: 1px solid lightgreen;
+    transition: background-color 0.3s ease;
   }
 
-  button:hover {
-    background-color: lightgrey;
+  .cta-button:hover {
+    background: rgba(0, 0, 0, 0.1);
   }
 
   .text-center {
