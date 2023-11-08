@@ -13,6 +13,19 @@
   const handleImageClick = (property) => {
     grundstueck[property] = grundstueck[property] += 1;
   };
+
+  let massnahme = {
+    name: "",
+    beschreibung: "",
+    spezifizierung: "",
+    kosten: 0,
+  }
+
+  function sendGrundstueckToServer() {
+    axios.post("http://localhost:3001/api/massnahme/", grundstueck).then((response) => {
+      massnahme = response.data;
+    });
+  }
 </script>
 
 <main>
@@ -101,6 +114,19 @@
       </div>
     {/if}
   {/if}
+
+
+  <button onclick="sendGrundstueckToServer()">Massnahmen anzeigen</button>
+
+
+
+<p>{massnahme.name}</p>
+<p>{massnahme.beschreibung}</p>
+<p>{massnahme.spezifizierung}</p>
+<p>{massnahme.kosten}</p>
+
+
+
 </main>
 
 <style>
