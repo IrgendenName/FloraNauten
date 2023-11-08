@@ -2,7 +2,7 @@
 </script>
 
 <main>
-  <video src="images/biodiversity.mp4" muted autoplay loop></video>
+  <video src="images/flowers4.mp4" muted autoplay loop></video>
 
   <div class="overlay">
     <h1>WARUM BIODIVERSITÄT FÜR UNS WICHTIG IST</h1>

@@ -19,7 +19,7 @@
     beschreibung: "",
     spezifizierung: "",
     kosten: 0,
-  }
+  };
 
   // function sendGrundstueckToServer() {
   //   axios.post("http://localhost:3001/api/massnahme/", grundstueck).then((response) => {
@@ -27,15 +27,12 @@
   //   });
   // }
 
-
   function sendGrundstueckToServer() {
     axios.post("http://localhost:3001/api/massnahme/", grundstueck).then(() => {
       // Navigate to Massnahmen.svelte and pass grundstueck data as a parameter
       goto("/Massnahmen", { grundstueck });
     });
   }
-
-  
 </script>
 
 <main>
@@ -47,6 +44,8 @@
         src="gebaeude.png"
         alt="Gebäude"
         on:click={() => handleImageClick("gebaeude")}
+        class:active={grundstueck.gebaeude === 1}
+
       />
       <figcaption>Gebäude</figcaption>
     </figure>
@@ -55,6 +54,8 @@
         src="flaeche.png"
         alt="Fläche"
         on:click={() => handleImageClick("flaeche")}
+        class:active={grundstueck.flaeche === 1}
+
       />
       <figcaption>Fläche</figcaption>
     </figure>
@@ -69,6 +70,8 @@
           src="fassade.jpg"
           alt="Fassade"
           on:click={() => handleImageClick("fassade")}
+          class:active={grundstueck.fassade === 1}
+
         />
         <figcaption>Fassade</figcaption>
       </figure>
@@ -77,6 +80,8 @@
           src="balkon.png"
           alt="Balkon"
           on:click={() => handleImageClick("balkon")}
+          class:active={grundstueck.balkon === 1}
+
         />
         <figcaption>Balkon</figcaption>
       </figure>
@@ -90,6 +95,8 @@
           src="gruenflaeche.png"
           alt="Grünfläche"
           on:click={() => handleImageClick("gruenflaeche")}
+          class:active={grundstueck.gruenflaeche === 1}
+
         />
         <figcaption>Grünfläche</figcaption>
       </figure>
@@ -98,6 +105,8 @@
           src="verkehrsflaeche.jpg"
           alt="Verkehrsfläche"
           on:click={() => handleImageClick("verkehrsflaeche")}
+          class:active={grundstueck.verkehrsflaeche === 1}
+
         />
         <figcaption>Verkehrsfläche</figcaption>
       </figure>
@@ -110,6 +119,8 @@
             src="versiegelt.jpg"
             alt="Versiegelt"
             on:click={() => handleImageClick("versiegelt")}
+            class:active={grundstueck.versiegelt === 1}
+
           />
           <figcaption>Versiegelt</figcaption>
         </figure>
@@ -118,6 +129,8 @@
             src="unversiegelt.jpg"
             alt="Unversiegelt"
             on:click={() => handleImageClick("unversiegelt")}
+            class:active={grundstueck.unversiegelt === 1}
+
           />
           <figcaption>Unversiegelt</figcaption>
         </figure>
@@ -125,23 +138,21 @@
     {/if}
   {/if}
 
+  <a href="#/massnahmen">
+    <button onclick="sendGrundstueckToServer()">Massnahmen anzeigen</button></a
+  >
 
-
-  <a href="#/massnahmen">  <button onclick="sendGrundstueckToServer()">Massnahmen anzeigen</button></a>
-
-
-
-
-<!-- <p>{massnahme.name}</p>
+  <!-- <p>{massnahme.name}</p>
 <p>{massnahme.beschreibung}</p>
 <p>{massnahme.spezifizierung}</p>
 <p>{massnahme.kosten}</p> -->
-
-
-
 </main>
 
 <style>
+  .text-center img.active {
+    border: 2px solid gray;
+  }
+
   main {
     display: flex;
     flex-direction: column;

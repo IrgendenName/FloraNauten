@@ -1,11 +1,41 @@
 <script>
   import { onMount } from "svelte";
   import axios from "axios";
+
+
+  let fassade = {
+    name: "fassade",
+    beschreibung: "",
+    spezifizierung: "",
+    kosten: 0,
+}
+
+let gruenflaeche = {
+    name: "gruenflaeche",
+    beschreibung: "",
+    spezifizierung: "",
+    kosten: 0,
+}
+
+let unversiegelt = {
+    name: "unversiegelt",
+    beschreibung: "",
+    spezifizierung: "",
+    kosten: 0,
+}
+
+
+
+
+
 </script>
 
 <main>
   <h1>Empfohlene Massnahmen</h1>
-  
+  <li>{unversiegelt.name}</li>
+  <li>{fassade.name}</li>
+  <li>{gruenflaeche.name}</li>
+
 
 
 
