@@ -5,19 +5,12 @@
   <video src="images/flowers4.mp4" muted autoplay loop></video>
 
   <div class="overlay">
-    <h1>WARUM BIODIVERSITÄT FÜR UNS WICHTIG IST</h1>
+    <h1>SO FÖRDERN SIE DIE BIODIVERSITÄT</h1>
     <p>
-      Die Biodiversität – die Vielfalt der Gene, Arten und Lebensräume – ist
-      unsere Lebensgrundlage. In der Schweiz sind zurzeit die Hälfte der
-      Lebensräume und ein Drittel aller Arten bedroht. Darüber hinaus ist der
-      Erhalt der biologischen Vielfalt wichtig für Erfolge beim Klimaschutz. Wir
-      haben uns ambitionierte Ziele im Rahmen unserer Klimastrategie gesetzt: Als
-      gesellschaftliche Akteurin wollen wir menschlichen Fortschritt ermöglichen,
-      indem wir schützen, was wirklich wichtig ist – und dazu gehört die
-      Biodiversität.
+      Bauen für die Natur
     </p>
     <a class="nav-link" href="#/rechner">
-      <button class="cta-button">VERBINDE DICH JETZT MIT DER NATUR </button>
+      <button class="cta-button">JETZT ENTDECKEN</button>
     </a>
   </div>
 </main>
