@@ -42,7 +42,7 @@ let path = "";
 </script>
 
 <main>
-  <h2>Um was für eine Fläche handelt es sich?</h2>
+  <h2>wo möchten Sie Biodiversität fördern?</h2>
 
   <div class="text-center">
     <figure>
@@ -53,7 +53,7 @@ let path = "";
         class:active={grundstueck.gebaeude === 1}
 
       />
-      <figcaption>Gebäude</figcaption>
+      <figcaption>An einem Gebäude</figcaption>
     </figure>
     <figure>
       <img
@@ -63,7 +63,7 @@ let path = "";
         class:active={grundstueck.flaeche === 1}
 
       />
-      <figcaption>Fläche</figcaption>
+      <figcaption>Auf einer Fläche</figcaption>
     </figure>
   </div>
 
