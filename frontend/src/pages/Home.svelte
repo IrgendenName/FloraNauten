@@ -7,8 +7,7 @@
   <div class="overlay">
     <h1>BAUEN FÜR DIE NATUR</h1>
 
-    <h2>SO FÖRDERN SIE DIE BIODIVERSITÄT</h2> 
-  
+    <h1>SO FÖRDERN SIE DIE BIODIVERSITÄT</h1> 
     <a class="nav-link" href="#/rechner">
       <button class="cta-button">JETZT ENTDECKEN</button>
     </a>
