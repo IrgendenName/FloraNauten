@@ -4,7 +4,12 @@
 </script>
 
 <main>
-  <h1>WARUM BIODIVERSITÄT FÜR UNS WICHTIG IST</h1>
+  <h1>Empfohlene Massnahmen</h1>
+  
+
+
+
+
 </main>
 
 <style>
@@ -14,7 +19,7 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     text-align: center;
     color: black;
   }

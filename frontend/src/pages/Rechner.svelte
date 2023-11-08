@@ -21,11 +21,21 @@
     kosten: 0,
   }
 
+  // function sendGrundstueckToServer() {
+  //   axios.post("http://localhost:3001/api/massnahme/", grundstueck).then((response) => {
+  //     massnahme = response.data;
+  //   });
+  // }
+
+
   function sendGrundstueckToServer() {
-    axios.post("http://localhost:3001/api/massnahme/", grundstueck).then((response) => {
-      massnahme = response.data;
+    axios.post("http://localhost:3001/api/massnahme/", grundstueck).then(() => {
+      // Navigate to Massnahmen.svelte and pass grundstueck data as a parameter
+      goto("/Massnahmen", { grundstueck });
     });
   }
+
+  
 </script>
 
 <main>
@@ -116,14 +126,16 @@
   {/if}
 
 
-  <button onclick="sendGrundstueckToServer()">Massnahmen anzeigen</button>
+
+  <a href="#/massnahmen">  <button onclick="sendGrundstueckToServer()">Massnahmen anzeigen</button></a>
 
 
 
-<p>{massnahme.name}</p>
+
+<!-- <p>{massnahme.name}</p>
 <p>{massnahme.beschreibung}</p>
 <p>{massnahme.spezifizierung}</p>
-<p>{massnahme.kosten}</p>
+<p>{massnahme.kosten}</p> -->
 
 
 
