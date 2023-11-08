@@ -44,7 +44,7 @@
 <main>
     <div class="massnahme">
       <h1>Empfohlene Massnahmen</h1>
-      <img src="fassademassnahme.jpg" alt="Fassade" class="image" style="padding-bottom: 50px; padding-top: 10px"/>
+      <img src="fassademassnahme.jpg" alt="Fassade" class="image"/>
       <br/>
       
       <h3><b>{fassade.name}</b></h3>
@@ -84,11 +84,13 @@
 <style>
   .image {
     width: 100%;
-    max-width: 400px; 
+    max-width: 600px; 
     height: auto;
     display: block;
     margin: 0 auto;
     margin-top: 50px;
+    padding-bottom: 30px;
+    padding-top: 10px
   }
 
   main {
@@ -118,7 +120,7 @@
   .massnahme {
     max-width: 800px;
     margin: 10px;
-    padding-top: 350px;
+    padding-top: 500px;
     padding-bottom: 100px;
   }
 
@@ -143,7 +145,7 @@
 
   th,
   td {
-    border: 1px solid #ddd;
+    border: 1px solid #a4a4a4;
     padding: 8px;
     text-align: left;
   }
