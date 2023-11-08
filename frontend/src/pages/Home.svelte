@@ -5,10 +5,10 @@
   <video src="images/flowers4.mp4" muted autoplay loop></video>
 
   <div class="overlay">
-    <h1>BAUEN FÜR DIE NATUR: SO FÖRDERN SIE DIE BIODIVERSITÄT </h1>
-    <p>
-    
-    </p>
+    <h1>BAUEN FÜR DIE NATUR</h1>
+
+    <h2>SO FÖRDERN SIE DIE BIODIVERSITÄT</h2> 
+  
     <a class="nav-link" href="#/rechner">
       <button class="cta-button">JETZT ENTDECKEN</button>
     </a>
