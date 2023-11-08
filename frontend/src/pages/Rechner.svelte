@@ -1,4 +1,9 @@
 <script>
+
+
+let path = "";
+
+
   let grundstueck = {
     gebaeude: 0,
     flaeche: 0,
@@ -12,6 +17,7 @@
 
   const handleImageClick = (property) => {
     grundstueck[property] = grundstueck[property] += 1;
+    path = property;
   };
 
   let massnahme = {
@@ -138,9 +144,9 @@
     {/if}
   {/if}
 
-  <a href="#/massnahmen">
-    <button onclick="sendGrundstueckToServer()">Massnahmen anzeigen</button></a
-  >
+  <a href={"#/" + path}>
+    <button>Massnahmen anzeigen</button>
+  </a>
 
   <!-- <p>{massnahme.name}</p>
 <p>{massnahme.beschreibung}</p>
@@ -157,7 +163,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
   }
 
   h1,
