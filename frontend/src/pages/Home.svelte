@@ -57,19 +57,21 @@
     margin-bottom: 2rem;
   }
 
+  .nav-link{
+    text-align: center;
+  }
   /* Stil für den Call-to-Action Button */
   .cta-button {
     padding: 1rem 2rem;
-    background: green;
     color: white;
-    border: none;
-    border-radius: 5px;
+    background: transparent;
+    border: 3px solid white;
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
 
   .cta-button:hover {
-    background: darkgreen;
+    background: rgba(255,255,255, 0.3);
   }
 </style>

@@ -33,6 +33,7 @@
       goto("/Massnahmen", { grundstueck });
     });
   }
+
 </script>
 
 <main>
@@ -157,7 +158,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
   }
 
   h1,
