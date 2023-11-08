@@ -2,25 +2,15 @@
   import { onMount } from "svelte";
   import axios from "axios";
 
+
+
   let fassade = {
-    name: "Fassade",
-    beschreibung: "",
-    spezifizierung: "",
-    kosten: 0,
-  };
-
-  let gruenflaeche = {
-    name: "Grünfläche",
-    beschreibung: "",
-    spezifizierung: "",
-    kosten: 0,
-  };
-
-  let unversiegelt = {
     name: "Fassadenbegrünung",
     beschreibung: `Sie möchten Ihre Fassade begrünen. Das ist eine gute Idee. Die Begrünung Ihrer Fassade bringt vielfältige Vorteile für Mensch und Natur. Sie erhöhen das Wohlbefinden von uns Menschen und leisten einen wichtigen Beitrag zur Biodiversität. Ausserdem absorbieren die Begrünungen Stickoxide sowie Feinstaub und leisten somit einen wichtigen Beitrag für saubere Luft. Für die meisten Pflanzen ist die Installation einer Rankenhilfe notwendig.`,
     spezifizierung: ``,
     text1: "Drahtseile für eine Fassade in der Länge von 15m",
+    text11: "37 Stk. à CHF 50.-",
+    text12: "(Drahtseile werden im Abstand von 40 cm an Fassade geschraubt)",
     kosten1: "CHF 1850",
     text2: "Kletterpflanze Trompetenblume 37 Stk. à CHF 50.-",
     kosten2: "CHF 1850",
@@ -34,24 +24,24 @@
   <br> <br><br> <br>
   <div class="massnahme">
     
-    <h3><b>{unversiegelt.name}</b></h3>
+    <h3><b>{fassade.name}</b></h3>
     <br />
     <h3>Beschreibung</h3>
-    <p class="beschreibung">{unversiegelt.beschreibung}</p>
+    <p class="beschreibung">{fassade.beschreibung}</p>
     <br />
     <h3>Kosten</h3>
     <table>
       <tr>
-        <td>{unversiegelt.text1}</td>
-        <td>{unversiegelt.kosten1}</td>
+        <td>{fassade.text1}<br><br>{fassade.text11}<br><br>{fassade.text12}</td>
+        <td>{fassade.kosten1}</td>
       </tr>
       <tr>
-        <td>{unversiegelt.text2}</td>
-        <td>{unversiegelt.kosten2}</td>
+        <td>{fassade.text2}</td>
+        <td>{fassade.kosten2}</td>
       </tr>
       <tr>
-        <td><b>{unversiegelt.totaltext}</b></td>
-        <td><b>{unversiegelt.totalpreis}</b></td>
+        <td><b>{fassade.totaltext}</b></td>
+        <td><b>{fassade.totalpreis}</b></td>
       </tr>
     </table>
   </div>

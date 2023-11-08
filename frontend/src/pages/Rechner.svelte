@@ -1,4 +1,9 @@
 <script>
+
+
+let path = "";
+
+
   let grundstueck = {
     gebaeude: 0,
     flaeche: 0,
@@ -12,6 +17,7 @@
 
   const handleImageClick = (property) => {
     grundstueck[property] = grundstueck[property] += 1;
+    path = property;
   };
 
   let massnahme = {
@@ -27,12 +33,12 @@
   //   });
   // }
 
-  function sendGrundstueckToServer() {
-    axios.post("http://localhost:3001/api/massnahme/", grundstueck).then(() => {
-      // Navigate to Massnahmen.svelte and pass grundstueck data as a parameter
-      goto("/Massnahmen", { grundstueck });
-    });
-  }
+  // function sendGrundstueckToServer() {
+  //   axios.post("http://localhost:3001/api/massnahme/", grundstueck).then(() => {
+  //     // Navigate to Massnahmen.svelte and pass grundstueck data as a parameter
+  //     goto("/Fassade", { grundstueck });
+  //   });
+  // }
 </script>
 
 <main>
@@ -138,9 +144,9 @@
     {/if}
   {/if}
 
-  <a href="#/massnahmen">
-    <button onclick="sendGrundstueckToServer()">Massnahmen anzeigen</button></a
-  >
+  <a href={"#/" + path}>
+    <button>Massnahmen anzeigen</button>
+  </a>
 
   <!-- <p>{massnahme.name}</p>
 <p>{massnahme.beschreibung}</p>
