@@ -16,6 +16,29 @@
     totaltext: "Total Materialkosten",
     totalpreis: "CHF 3700",
   };
+
+  async function shareRecipe() {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: fassade.name, 
+          text: "Schau dir diese Empfohlene Massnahme an:",
+          url: `/fassade`, // Adjust the URL as needed
+        });
+        console.log(
+          "Empfohlene Massnahme erfolgreich geteilt. Login erforderlich für Empfänger."
+        );
+      } catch (err) {
+        console.error("Fehler beim Teilen:", err);
+      }
+    } else {
+      alert("Die Web Share API wird von Ihrem Browser nicht unterstützt.");
+    }
+  }
+
+
+
+
 </script>
 
 <main>
@@ -53,6 +76,8 @@
       <Calendar/>
 
       <button class="cta-button" style="margin-top: 50px;">Download PDF</button>
+      <button class="sharingbutton" on:click={shareRecipe}>Share</button>
+
     </div>  
 
 </main>
