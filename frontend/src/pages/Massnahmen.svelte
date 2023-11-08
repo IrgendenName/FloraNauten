@@ -94,14 +94,9 @@
 
   .beschreibung {
     margin-bottom: 10px;
-    text-align: left;
   }
 
-  .spezifizierung {
-    font-size: 1rem;
-    margin-bottom: 10px;
-    text-align: left;
-  }
+
 
   table {
     width: 100%;
