@@ -33,12 +33,12 @@ let path = "";
   //   });
   // }
 
-  // function sendGrundstueckToServer() {
-  //   axios.post("http://localhost:3001/api/massnahme/", grundstueck).then(() => {
-  //     // Navigate to Massnahmen.svelte and pass grundstueck data as a parameter
-  //     goto("/Fassade", { grundstueck });
-  //   });
-  // }
+  function sendGrundstueckToServer() {
+    axios.post("http://localhost:3001/api/massnahme/", grundstueck).then(() => {
+      // Navigate to Massnahmen.svelte and pass grundstueck data as a parameter
+      goto("/Massnahmen", { grundstueck });
+    });
+  }
 </script>
 
 <main>
@@ -163,7 +163,6 @@ let path = "";
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
   }
 
   h1,
