@@ -17,38 +17,43 @@
   };
 
   let unversiegelt = {
-    name: "Lorem ipsum",
-    beschreibung: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-                    sed diam nonumy eirmod tempor invidunt ut labore et dolore 
-                    magna aliquyam erat, sed diam voluptua. At vero eos et accusam 
-                    et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
-                    no sea takimata sanctus est Lorem ipsum dolor sit amet. 
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-                    sed diam nonumy eirmod tempor invidunt ut labore et dolore 
-                    magna aliquyam erat, sed diam voluptua. At vero eos et accusam 
-                    et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
-                    no sea takimata sanctus est Lorem ipsum dolor sit amet.`,
-    spezifizierung: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-                      sed diam nonumy eirmod tempor invidunt ut labore et dolore 
-                      magna aliquyam erat, sed diam voluptua. At vero eos et accusam 
-                      et justo duo dolores et ea rebum. Stet clita kasd gubergren`,
-    kosten: "CHF 25/m2",
+    name: "Fassadenbegrünung",
+    beschreibung: `Sie möchten Ihre Fassade begrünen. Das ist eine gute Idee. Die Begrünung Ihrer Fassade bringt vielfältige Vorteile für Mensch und Natur. Sie erhöhen das Wohlbefinden von uns Menschen und leisten einen wichtigen Beitrag zur Biodiversität. Ausserdem absorbieren die Begrünungen Stickoxide sowie Feinstaub und leisten somit einen wichtigen Beitrag für saubere Luft. Für die meisten Pflanzen ist die Installation einer Rankenhilfe notwendig.`,
+    spezifizierung: ``,
+    text1: "Drahtseile für eine Fassade in der Länge von 15m",
+    kosten1: "CHF 1850",
+    text2: "Kletterpflanze Trompetenblume 37 Stk. à CHF 50.-",
+    kosten2: "CHF 1850",
+    totaltext: "Total Materialkosten",
+    totalpreis: "CHF 3700",
   };
 </script>
 
 <main>
   <h1>Empfohlene Massnahmen</h1>
+  <br> <br><br> <br>
   <div class="massnahme">
-
-    <h3>{unversiegelt.name}</h3>
-    <br>
+    
+    <h3><b>{unversiegelt.name}</b></h3>
+    <br />
     <h3>Beschreibung</h3>
     <p class="beschreibung">{unversiegelt.beschreibung}</p>
-    <br>
-    <h3>Spezifizierung</h3>
-    <p class="spezifizierung">{unversiegelt.spezifizierung}</p>
-    <br><h3>Kosten</h3>
-    <p class="kosten">Kosten: {unversiegelt.kosten}</p>
+    <br />
+    <h3>Kosten</h3>
+    <table>
+      <tr>
+        <td>{unversiegelt.text1}</td>
+        <td>{unversiegelt.kosten1}</td>
+      </tr>
+      <tr>
+        <td>{unversiegelt.text2}</td>
+        <td>{unversiegelt.kosten2}</td>
+      </tr>
+      <tr>
+        <td><b>{unversiegelt.totaltext}</b></td>
+        <td><b>{unversiegelt.totalpreis}</b></td>
+      </tr>
+    </table>
   </div>
 </main>
 
@@ -65,13 +70,16 @@
     color: black;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: "Julius Sans One";
   }
 
   .massnahme {
-
     max-width: 600px;
     margin: 20px;
   }
@@ -95,5 +103,20 @@
     text-align: left;
   }
 
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
 
+  th,
+  td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
 </style>
