@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import axios from "axios";
+  import Calendar from './Calendar.svelte';
 
   let fassade = {
     name: "Fassadenbegrünung",
@@ -18,34 +19,42 @@
 </script>
 
 <main>
-  <h1>Empfohlene Massnahmen</h1>
-  <br />
-  <div class="massnahme">
-    <img src="fassademassnahme.jpg" alt="Fassade" class="image" />
-    <h3><b>{fassade.name}</b></h3>
-    <br />
-    <h3>Beschreibung</h3>
-    <p class="beschreibung">{fassade.beschreibung}</p>
-    <br />
-    <h3>Kosten</h3>
-    <table>
-      <tr>
-        <td
-          >{fassade.text1}<br /><br />{fassade.text11}<br /><br
-          />{fassade.text12}</td
-        >
-        <td>{fassade.kosten1}</td>
-      </tr>
-      <tr>
-        <td>{fassade.text2}</td>
-        <td>{fassade.kosten2}</td>
-      </tr>
-      <tr>
-        <td><b>{fassade.totaltext}</b></td>
-        <td><b>{fassade.totalpreis}</b></td>
-      </tr>
-    </table>
-  </div>
+    <div class="massnahme">
+      <img src="fassademassnahme.jpg" alt="Fassade" class="image"/>
+      <h1>Empfohlene Massnahmen</h1>
+      <br/>
+      
+      <h3><b>{fassade.name}</b></h3>
+      <br />
+      <h3>Beschreibung</h3>
+      
+      <p class="beschreibung">{fassade.beschreibung}</p>
+      <br />
+      <h3>Kosten</h3>
+      <table>
+        <tr>
+          <td
+            >{fassade.text1}<br /><br />{fassade.text11}<br /><br
+            />{fassade.text12}</td
+          >
+          <td>{fassade.kosten1}</td>
+        </tr>
+        <tr>
+          <td>{fassade.text2}</td>
+          <td>{fassade.kosten2}</td>
+        </tr>
+        <tr>
+          <td><b>{fassade.totaltext}</b></td>
+          <td><b>{fassade.totalpreis}</b></td>
+        </tr>
+      </table>
+      <br/>
+      <h3>Pflege</h3>
+      <Calendar/>
+
+      <button class="cta-button" style="margin-top: 50px;">Download PDF</button>
+    </div>  
+
 </main>
 
 <style>
@@ -55,6 +64,7 @@
     height: auto;
     display: block;
     margin: 0 auto;
+    margin-top: 50px;
   }
 
   main {
@@ -76,6 +86,9 @@
   h5,
   h6 {
     font-family: "Julius Sans One";
+  }
+
+  h1 {margin-top: 140px;
   }
 
   .massnahme {
@@ -110,5 +123,19 @@
 
   th {
     background-color: #f2f2f2;
+  }
+  /* Stil für den Call-to-Action Button */
+  .cta-button {
+    padding: 1rem 2rem;
+    color: rgb(0, 0, 0);
+    background: transparent;
+    border: 3px solid rgb(0, 0, 0);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background: rgba(255,255,255, 0.3);
   }
 </style>

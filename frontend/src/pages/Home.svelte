@@ -5,9 +5,8 @@
   <video src="images/flowers4.mp4" muted autoplay loop></video>
 
   <div class="overlay">
-    <h1>BAUEN FÜR DIE NATUR</h1>
 
-    <h1>SO FÖRDERN SIE DIE BIODIVERSITÄT</h1> 
+    <h1>BAUEN FÜR DIE NATUR<br/>SO FÖRDERN SIE DIE BIODIVERSITÄT</h1> <br/>
     <a class="nav-link" href="#/rechner">
       <button class="cta-button">JETZT ENTDECKEN</button>
     </a>
@@ -28,15 +27,17 @@
   }
 
   .overlay{
-    position: fixed;
     bottom: 5vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 700px;
   }
 
   /* Stil für die Überschrift */
   h1, h2, h3, h4, h5, h6 {
     color: #fff;
     font-size: 3rem;
-    margin-bottom: 2rem;
     margin-top: 30vh;
     font-family: 'Julius Sans One';
 

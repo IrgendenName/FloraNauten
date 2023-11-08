@@ -19,7 +19,7 @@
   <style>
     .calendar {
       display: grid;
-      grid-template-columns: repeat(12, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       gap: 16px;
       padding: 16px;
     }
@@ -28,7 +28,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100px;
+      height: 50px;
       border-radius: 6px;
       color: #333;
       font-size: 10px;
