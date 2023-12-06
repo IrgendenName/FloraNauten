@@ -31,7 +31,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: 700px;
+    margin-top: 45%;
   }
 
   /* Stil für die Überschrift */

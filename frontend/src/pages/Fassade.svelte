@@ -120,7 +120,7 @@
   .massnahme {
     max-width: 800px;
     margin: 10px;
-    padding-top: 500px;
+    padding-top: 47%;
     padding-bottom: 100px;
   }
 
